@@ -76,8 +76,13 @@ h4 {
 
 /* Slider */
 
-.slide {
-    padding: 25px 0;
+.recent-post-slider.design-2 .post-image-bg {
+    min-height: 700px;
+}
+
+.recent-post-slider.design-2 .post-content-left {
+    display: flex;
+    align-items: center;
 }
 
 

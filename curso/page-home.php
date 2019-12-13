@@ -3,9 +3,7 @@
 <div class="content-area">
 	<main>
 		<section class="slide">
-			<div class="container">
-				<div class="row">Slide</div>
-			</div>
+			<?php echo do_shortcode('[recent_post_slider design="design-2" limit="5"]'); ?>
 		</section>
 		<section class="services">
 			<div class="container">
@@ -88,9 +86,12 @@
 			</div>
 		</section>
 		<section class="map">
-			<div class="container">
-				<div class="row">Mapa</div>
-			</div>
+		<iframe
+		width="100%"
+		height="350"
+		frameborder="0" style="border:0"
+		src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDd4DzU9PBLDVbcSWeMC4-vS9YaWZBjMTU&q=Space+Needle,Seattle+WA&zoom=15" allowfullscreen>
+		</iframe>
 		</section>
 	</main>
 </div>
