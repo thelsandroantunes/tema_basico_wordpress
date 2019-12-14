@@ -1,4 +1,8 @@
 <?php
+//Requerendo o arquivo do Customizer
+
+require get_template_directory() . '/inc/customizer.php';
+
 
 // Carregando  nossos scripts e folhas de estilos
 function load_scripts(){
@@ -31,6 +35,7 @@ function wpcurso_config(){
     add_theme_support('post-thumbnails');
     add_theme_support('post-formats', array( 'video', 'image' ));
     add_theme_support('title-tag');
+    add_theme_support('custom-logo', array('height' => 110, 'width' => 200));
 }
 
 add_action('after_setup_theme', 'wpcurso_config', 0);
@@ -91,6 +96,18 @@ function wpcurso_sidebars(){
             'name' => 'Services 3',
             'id' => 'services-3',
             'description' => 'Third Services Area.',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Social Icons',
+            'id' => 'social-media',
+            'description' => 'Place your media icons here',
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
