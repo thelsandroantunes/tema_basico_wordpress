@@ -18,5 +18,10 @@
 </footer>
 
 <?php wp_footer(); ?>
+<script>
+    JQuery(document).ready(function ($) {
+        $(".is-type-video").fitVids();
+    });
+</script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
-//Requerendo o arquivo do Customizer
+//Incluindo os arquivos da TGM
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/require-plugins.php';
 
+//Requerendo o arquivo do Customizer
 require get_template_directory() . '/inc/customizer.php';
 
 
@@ -12,6 +15,8 @@ function load_scripts(){
     wp_enqueue_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1', 'all');
 
     wp_enqueue_style( 'template', get_template_directory_uri() . '/css/template.css', array(), '1.0', 'all');
+
+    wp_enqueue_script('fitvids',get_template_directory_uri() . '/js/fitvids.js', array('jquery'), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
@@ -36,6 +41,20 @@ function wpcurso_config(){
     add_theme_support('post-formats', array( 'video', 'image' ));
     add_theme_support('title-tag');
     add_theme_support('custom-logo', array('height' => 110, 'width' => 200));
+    add_theme_support('editor-color-palette', 
+    array(
+        'name' => __('Blood Red', 'wpcurso'),
+        'slug' => 'blood-red',
+        'color' => '#b9121b'
+    ),
+
+    array(
+        'name' => __('White', 'wpcurso'),
+        'slug' => 'white',
+        'color' => '#ffffff'
+    )
+    
+    );
 
     //Habilitando suporte à tradução
     $textdomain = 'wpcurso';
