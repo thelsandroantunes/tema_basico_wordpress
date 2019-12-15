@@ -21,8 +21,8 @@ function wpcurso_config(){
     //Registrando os MENUS
     register_nav_menus(
         array(
-            'my_main_menu' => 'Main Menu',
-            'footer_menu' => 'Footer Menu'
+            'my_main_menu' => __('Main Menu', 'wpcurso'),
+            'footer_menu' => __('Footer Menu', 'wpcurso')
         )
     );
 
@@ -36,6 +36,12 @@ function wpcurso_config(){
     add_theme_support('post-formats', array( 'video', 'image' ));
     add_theme_support('title-tag');
     add_theme_support('custom-logo', array('height' => 110, 'width' => 200));
+
+    //Habilitando suporte à tradução
+    $textdomain = 'wpcurso';
+    load_theme_textdomain($textdomain, get_stylesheet_directory() .'//languages/');
+    load_theme_textdomain($textdomain, get_template_directory() .'//languages/');
+    
 }
 
 add_action('after_setup_theme', 'wpcurso_config', 0);
@@ -45,9 +51,9 @@ add_action('widgets_init', 'wpcurso_sidebars');
 function wpcurso_sidebars(){
     register_sidebar(
         array(
-            'name' => 'Home Page Sidebar',
+            'name' => __('Home Page Sidebar','wpcurso'),
             'id' => 'sidebar-1',
-            'description' => 'Sidebar to be used on Home Page',
+            'description' => __('Sidebar to be used on Home Page', 'wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -57,9 +63,9 @@ function wpcurso_sidebars(){
 
     register_sidebar(
         array(
-            'name' => 'Blog Sidebar',
+            'name' => __('Blog Sidebar','wpcurso'),
             'id' => 'sidebar-2',
-            'description' => 'Sidebar to be used on Blog Page',
+            'description' => __('Sidebar to be used on Blog Page','wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -69,9 +75,9 @@ function wpcurso_sidebars(){
 
     register_sidebar(
         array(
-            'name' => 'Services 1',
+            'name' => __('Services 1','wpcurso'),
             'id' => 'services-1',
-            'description' => 'First Services Area.',
+            'description' => __('First Services Area.','wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -81,9 +87,9 @@ function wpcurso_sidebars(){
 
     register_sidebar(
         array(
-            'name' => 'Services 2 ',
+            'name' => __('Services 2 ', 'wpcurso'),
             'id' => 'services-2',
-            'description' => 'Second Services Area.',
+            'description' => __('Second Services Area.','wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -93,9 +99,9 @@ function wpcurso_sidebars(){
 
     register_sidebar(
         array(
-            'name' => 'Services 3',
+            'name' => __('Services 3','wpcurso'),
             'id' => 'services-3',
-            'description' => 'Third Services Area.',
+            'description' => __('Third Services Area.','wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -105,9 +111,9 @@ function wpcurso_sidebars(){
 
     register_sidebar(
         array(
-            'name' => 'Social Icons',
+            'name' => __('Social Icons','wpcurso'),
             'id' => 'social-media',
-            'description' => 'Place your media icons here',
+            'description' => __('Place your media icons here','wpcurso'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',

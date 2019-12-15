@@ -12,16 +12,18 @@
 				<div class="row">				
 					<div class="error-404">
                         <header>
-                            <h1>Page not found</h1>
-                            <p>Unfortunately, the page you tried to reach does not exist on this page</p>
+                            <h1> <?php _e('Page not found', 'wpcurso') ?></h1>
+                            <p> <?php  _e('Unfortunately, the page you tried to reach does not exist on this page', 'wpcurso') ?></p>
                         </header>
                         <div class="error">
-                            <p>How doing a search?</p>
+                            <p><?php _e('How doing a search?', 'wpcurso') ?></p>
                             <?php get_search_form(); ?>
                             <?php the_widget( 'WP_Widget_Recent_Posts', 
                                                 array(
-                                                    'title' => 'Latest Posts', 'number' => 3
-                                            )); 
+													'title' => __('Latest Posts','wpcurso'), 
+													'number' => 3
+												)
+											); 
                             ?>
                         </div>
 					</div>	
